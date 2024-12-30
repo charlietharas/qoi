@@ -123,7 +123,7 @@ void decode(FILE* fptr, struct qoi_header* header, struct image_data* data) {
     int num = 1;
     char* ptr = (char*)&num;
     if (*ptr == 1) {
-        // convert from little endian
+        // convert to little endian
         width = ((0x000000ff & width) << 24) | ((0x0000ff00 & width) << 8) | ((0x00ff0000 & width) >> 8) | ((0xff000000 & width) >> 24);
         height = ((0x000000ff & height) << 24) | ((0x0000ff00 & height) << 8) | ((0x00ff0000 & height) >> 8) | ((0xff000000 & height) >> 24);
     }
